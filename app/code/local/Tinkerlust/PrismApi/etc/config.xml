@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Tinkerlust_PrismApi>
+			<version>0.1.0</version>
+		</Tinkerlust_PrismApi>
+	</modules>
+	<global>
+		<helpers>
+			<prismapi>
+				<class>Tinkerlust_PrismApi_Helper</class>
+			</prismapi>
+		</helpers>
+	</global>
+	<frontend>
+		<routers>
+			<prismapi>
+				<use>standard</use>
+				<args>
+					<module>Tinkerlust_PrismApi</module>
+					<frontName>prismapi</frontName>
+				</args>
+			</prismapi>
+		</routers>
+	</frontend>
+</config>
