@@ -45,7 +45,7 @@ class Tinkerlust_PrismApi_ProductController extends Mage_Core_Controller_Front_A
 		    		$thisProduct['id'] 			= $product->getData('entity_id');
 		    		$thisProduct['name'] 		= $product->getData('name');
 		    		
-		    		$thisProduct['description'] = "<a href='".Mage::getBaseUrl().$product->getData('url_key')."'>More Details</a>";
+		    		$thisProduct['description'] = "<a href='".Mage::getBaseUrl().'catalog/product/view/id/'.$product->getData('entity_id')."'>More Details</a>";
 		    		
 		    		$thisProduct['image_urls'] 	= array(Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'catalog/product'.$product->getData('image'),);
 		    		
