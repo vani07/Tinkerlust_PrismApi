@@ -37,11 +37,9 @@ class Tinkerlust_PrismApi_ProductController extends Mage_Core_Controller_Front_A
 	    	$data['results'] = [];
 
 	    	$collection->setCurPage($data['current_page']);
-
+	    	Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($collection);
 	    	foreach($collection as $product){
-	    		// $thisProduct = $product->getData();
-	    		$checkSalable = $product->getData('is_salable');
-	    		if ($checkSalable != 0) {
+	    		// $thisProduct = $product->getData();	
 		    		$thisProduct['id'] 			= $product->getData('entity_id');
 		    		$thisProduct['name'] 		= $product->getData('name');
 		    		
@@ -59,7 +57,6 @@ class Tinkerlust_PrismApi_ProductController extends Mage_Core_Controller_Front_A
 		    		$thisProduct['discount'] 	= null;  
 		    		
 		    		$data['results'][] 			= $thisProduct;
-	    		}
 	    	}
 	    }
 	    else {
